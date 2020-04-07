@@ -15,7 +15,11 @@ csv.readAndSaveFlipkartOrders = function(fileContents, company) {
     oObject.orderDate = dateUtil.stringToDate(data[1]);
     oObject.status = data[2];
     if(data[3] !== '') oObject.returnId = data[3];
-    if(data[4] !== '') oObject.deliveryDate = dateUtil.stringToDate(data[4]);
+    if(data[4].length >= 10) {
+      oObject.deliveryDate = dateUtil.stringToDate(data[4]);
+    } else {
+      oObject.deliveryDate = null;
+    }
     dbOps.saveOrder(oObject);
   });
 };

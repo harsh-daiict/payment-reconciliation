@@ -8,5 +8,5 @@ dateUtil.format =  function (date, format) {
 dateUtil.stringToDate = function(str) {
   var datePart = str.toString().split(" ")[0].trim();
   return new Date(datePart);
-}
+};
 module.exports = dateUtil;
