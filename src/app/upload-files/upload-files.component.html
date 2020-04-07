@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <mat-select [(value)]="company">
+        <mat-label>Company</mat-label>
+        <mat-option value="flipkart">Flipkart</mat-option>
+        <mat-option value="amazon">Amazon</mat-option>
+      </mat-select>
+    </div>
+    <div class="col">
+      <mat-select [(value)]="uploadType">
+        <mat-label>Upload Type</mat-label>
+        <mat-option value=order>Order</mat-option>
+        <mat-option value="payment">Payment</mat-option>
+      </mat-select>
+    </div>
+    <div class="col">
+      <button mat-raised-button (click)="sendMessage()">Select File</button>
+    </div>
+  </div>
+</div>
