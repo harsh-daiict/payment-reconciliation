@@ -1,33 +1,39 @@
-<div class="container">
+<div>
   <div class="row">
     <div class="col">
-      <mat-label> Report Type </mat-label>
-      <mat-select [(value)]="reportType">
-        <mat-option value="Order">Order Wise</mat-option>
-        <mat-option value="Transaction">Transaction Wise</mat-option>
-      </mat-select>
+      <mat-form-field style="margin-top: 10px; width: 100%;">
+        <mat-label>Select a Report Type </mat-label>
+        <mat-select [(value)]="reportType">
+          <mat-option value="Order">Order Wise</mat-option>
+          <mat-option value="Transaction">Transaction Wise</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
     <div class="col">
-      <input type="text" matInput [value]="id" placeholder="{{reportType}} Id"/>
+      <mat-form-field style="margin-top: 10px; width: 100%;">
+        <input type="text" matInput [value]="id" placeholder="Please Enter {{reportType}} Id"/>
+      </mat-form-field>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <mat-select [(value)]="company">
-        <mat-label>Company</mat-label>
-        <mat-option value="flipkart">Flipkart</mat-option>
-        <mat-option value="amazon">Amazon</mat-option>
-      </mat-select>
+      <mat-form-field style="margin-top: 10px; width: 100%;">
+        <mat-label>Select a Company</mat-label>
+        <mat-select [(value)]="company">
+          <mat-option value="flipkart">Flipkart</mat-option>
+          <mat-option value="amazon">Amazon</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-    <div class="col">
-      <mat-form-field>
+    <div class="col" style="padding-right: 0;">
+      <mat-form-field style="margin-top: 10px; width: 100%;">
         <input matInput [matDatepicker]="startDatePicker" (dateChange)="onStartDateSelect('change', $event)" placeholder="Start Date">
         <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #startDatePicker></mat-datepicker>
       </mat-form-field>
     </div>
-    <div class="col">
-      <mat-form-field>
+    <div class="col" style="padding-right: 0;">
+      <mat-form-field style="margin-top: 10px; width: 100%;">
         <input matInput [matDatepicker]="endDatePicker" (dateChange)="onStartDateSelect('change', $event)" placeholder="End Date">
         <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #endDatePicker></mat-datepicker>
@@ -37,29 +43,31 @@
 
   <div class="row" *ngIf="reportType ===  'Order'">
     <div class="col">
-      <mat-select [(value)]="status">
-        <mat-label>Status</mat-label>
-        <mat-option value="delivered">Delivered</mat-option>
-        <mat-option value="returned">Returned</mat-option>
-      </mat-select>
+      <mat-form-field style="margin-top: 10px; width: 100%;">
+        <mat-label>Select a Status</mat-label>
+        <mat-select [(value)]="status">
+          <mat-option value="delivered">Delivered</mat-option>
+          <mat-option value="returned">Returned</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
     <div class="col">
-      <mat-radio-group (change)="onSettlementTypeChanged($event)">
-        <mat-radio-button checked=true value="all">All</mat-radio-button>
-        <mat-radio-button value="unsettled">Unsettled</mat-radio-button>
-        <mat-radio-button value="settled">Settled</mat-radio-button>
+      <mat-radio-group class="radio-grp" (change)="onSettlementTypeChanged($event)">
+        <mat-radio-button class="radio-btn" checked=true value="all">All</mat-radio-button>
+        <mat-radio-button class="radio-btn" value="unsettled">Unsettled</mat-radio-button>
+        <mat-radio-button class="radio-btn" value="settled">Settled</mat-radio-button>
       </mat-radio-group>
     </div>
     <div class="col">
-      <mat-radio-group [disabled]="isPaymentModeDisabled" (change)="onPaymentTypeChanged($event)">
-        <mat-radio-button checked=true value="all">All</mat-radio-button>
-        <mat-radio-button value="singlepayment">Single Payment</mat-radio-button>
-        <mat-radio-button value="multipayment">Multiple Payments</mat-radio-button>
+      <mat-radio-group class="radio-grp" [disabled]="isPaymentModeDisabled" (change)="onPaymentTypeChanged($event)">
+        <mat-radio-button class="radio-btn" checked=true value="all">All</mat-radio-button>
+        <mat-radio-button class="radio-btn" value="singlepayment">Single Payment</mat-radio-button>
+        <mat-radio-button class="radio-btn" value="multipayment">Multiple Payments</mat-radio-button>
       </mat-radio-group>
     </div>
   </div>
 
-  <div class="row">
-    <button mat-raised-button (click)="onSubmitClick()">Get Report</button>
+  <div class="row" style="float: right;">
+    <button mat-raised-button color="primary" (click)="onSubmitClick()">Get Report</button>
   </div>
 </div>

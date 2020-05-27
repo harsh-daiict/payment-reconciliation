@@ -1,0 +1,17 @@
+.table-container {
+  height: 300px;
+  width: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-cell {
+  font-size: 10px;
+}
+
+.mat-header-cell {
+  font-size: 12px;
+}

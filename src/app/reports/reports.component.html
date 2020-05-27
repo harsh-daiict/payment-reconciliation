@@ -1,47 +1,63 @@
 <div class="container">
   <div class="row">
-    <app-report-filter></app-report-filter>
+    <app-report-filter style="width: 100%;"></app-report-filter>
   </div>
-  <div class="row">
-    <!--<mat-table [dataSource]="data">
-      <ng-container matColumnDef="orderId">
-        <th mat-header-cell *matHeaderCellDef> Order Id </th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.orderId}} </td>
-      </ng-container>
-      <ng-container matColumnDef="orderDate">
-        <th mat-header-cell *matHeaderCellDef> Date </th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.orderDate}} </td>
-      </ng-container>
-      <ng-container matColumnDef="orderAmount">
-        <th mat-header-cell *matHeaderCellDef> Amount </th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.orderAmount}} </td>
-      </ng-container>
-      <ng-container matColumnDef="orderStatus">
-        <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.orderStatus}} </td>
-      </ng-container>
-      <ng-container matColumnDef="deliveryDate">
-        <th mat-header-cell *matHeaderCellDef> Delivery Date </th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.deliveryDate}} </td>
-      </ng-container>
-      <ng-container matColumnDef="returnId">
-        <th mat-header-cell *matHeaderCellDef> Return Id </th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.orderReturnId}} </td>
-      </ng-container>
-      <ng-container matColumnDef="orderPayment">
-        <th mat-header-cell *matHeaderCellDef> Payment Received </th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.orderPayment}} </td>
-      </ng-container>
-      <ng-container matColumnDef="transactionId">
-        <th mat-header-cell *matHeaderCellDef> Transaction Id</th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.transactionId}} </td>
-      </ng-container>
-      <ng-container matColumnDef="transactionDate">
-        <th mat-header-cell *matHeaderCellDef> Transaction Date </th>
-        <td class="hideExtra linkItem" mat-cell *matCellDef="let element"> {{element.transactionDate}} </td>
-      </ng-container>
+  <div class="row" style="padding-top: 20px; padding-bottom: 20px;">
 
-    </mat-table>-->
+    <div class="table-container mat-elevation-z2">
+      <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="orderId">
+          <th mat-header-cell *matHeaderCellDef> Od. Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderDate">
+          <th mat-header-cell *matHeaderCellDef> Od. Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderDate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderAmount">
+          <th mat-header-cell *matHeaderCellDef> Od. Amt </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderAmount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderStatus">
+          <th mat-header-cell *matHeaderCellDef> Od. Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderStatus}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="deliveryDate">
+          <th mat-header-cell *matHeaderCellDef> Deli. Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.deliveryDate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderReturnId">
+          <th mat-header-cell *matHeaderCellDef> Od. ReturnId </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderReturnId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderPayment">
+          <th mat-header-cell *matHeaderCellDef> Od. Payment </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderPayment}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionId">
+          <th mat-header-cell *matHeaderCellDef> Trans. Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.transactionId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionDate">
+          <th mat-header-cell *matHeaderCellDef> Trans. Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.transactionDate}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
   </div>
 
 </div>
